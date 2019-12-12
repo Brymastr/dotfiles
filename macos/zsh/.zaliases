@@ -1,0 +1,23 @@
+alias l="ls -h"
+alias ll="ls -lh"
+alias la="ls -ah"
+alias lla="ls -lah"
+alias h="history"
+alias cat="bat"
+alias top="vtop -t monokai"
+alias gs="git status"
+alias gb="git branch"
+alias k="kubectl"
+alias compose="docker-compose"
+alias c="docker-compose"
+complete -F __start_kubectl k
+alias apply="kubectl apply -Rf ./"
+alias kgp="kubectl get pods"
+alias kgd="kubectl get deployments"
+alias kgs="kubectl get services"
+alias kdp="kubectl delete pod"
+alias kdd="kubectl delete deployment"
+alias kds="kubectl delete service"
+alias weather="curl wttr.in"
+# bailey-nelson/switch - `source` is required in order to change directories in a shell script
+alias switch='source /Users/brycen/dev/github.com/bailey-nelson/switch/switch'
