@@ -12,3 +12,4 @@ path+=/usr/local/bin
 path+=/usr/local/opt/openssl@1.1/bin
 path+=/Users/brycen/path/istio-1.0.6/bin
 path+=/Users/brycen/path/
+path+=/usr/local/share/dotnet
