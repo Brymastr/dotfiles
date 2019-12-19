@@ -6,6 +6,7 @@ set relativenumber
 syntax on
 set number
 set encoding=utf8
+set hlsearch
 colorscheme codedark
 "let g:airline_theme = 'codedark'
 let g:user_emmet_leader_key='<C-Y>'
