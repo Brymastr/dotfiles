@@ -8,8 +8,7 @@ bindkey -e
 # The following lines were added by compinstall
 zstyle :compinstall filename '/Users/brycen/.zshrc'
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit -i
 # End of lines added by compinstall
 
 setopt COMPLETE_ALIASES
@@ -82,3 +81,6 @@ source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # aliases
 source $HOME/.zaliases
+
+# secrets
+source $HOME/.zsecrets
