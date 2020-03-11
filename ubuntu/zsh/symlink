@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -si $(pwd)/.zshrc $HOME/.zshrc && \
+  ln -si $(pwd)/.zshenv $HOME/.zshenv && \
+  ln -si $(pwd)/.zaliases $HOME/.zaliases
