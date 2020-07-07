@@ -18,8 +18,8 @@ setopt COMPLETE_ALIASES
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # gcloud.
-if [ -f '/Users/brycen/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/brycen/google-cloud-sdk/completion.bash.inc'; fi
-if [ -f '/Users/brycen/google-cloud-sdk/path.bash.inc' ]; then source '/Users/brycen/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/Users/brycen/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/brycen/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/brycen/google-cloud-sdk/path.bash.inc' ]; then source '/Users/brycen/google-cloud-sdk/path.zsh.inc'; fi
 
 # kubectl
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
