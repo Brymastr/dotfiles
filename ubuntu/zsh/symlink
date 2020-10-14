@@ -2,4 +2,5 @@
 
 ln -si $(pwd)/.zshrc $HOME/.zshrc && \
   ln -si $(pwd)/.zshenv $HOME/.zshenv && \
-  ln -si $(pwd)/.zaliases $HOME/.zaliases
+  ln -si $(pwd)/.zaliases $HOME/.zaliases && \
+  ln -si $(pwd)/.zsecrets $HOME/.zsecrets

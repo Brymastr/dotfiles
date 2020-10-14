@@ -6,7 +6,7 @@ unsetopt autocd extendedglob
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/brycen/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -14,13 +14,19 @@ compinit
 
 setopt COMPLETE_ALIASES
 
+# aliases
+source $HOME/.zaliases
+
+# secrets
+source $HOME/.zsecrets
+
 # nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # gcloud.
-if [ -f '/home/brycen/google-cloud-sdk/completion.bash.inc' ]; then source '/home/brycen/google-cloud-sdk/completion.bash.inc'; fi
-if [ -f '/home/brycen/google-cloud-sdk/path.bash.inc' ]; then source '/home/brycen/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '$HOME/google-cloud-sdk/completion.bash.inc' ]; then source '$HOME/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '$HOME/google-cloud-sdk/path.bash.inc' ]; then source '$HOME/google-cloud-sdk/path.bash.inc'; fi
 
 # kubectl
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
@@ -70,15 +76,12 @@ POWERLEVEL9K_VCS_BRANCH_ICON=$'\uF126 '
 POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind git-remotebranch git-tagname)
 POWERLEVEL9K_VCS_UNTRACKED_ICON='\uf128'
 POWERLEVEL9K_NODE_VERSION_FOREGROUND='234'
-# POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=''
-# POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
-# POWERLEVEL9K_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL=''
-# POWERLEVEL9K_RIGHT_PROMPT_LAST_SEGMENT_END_SYMBOL=''
-# POWERLEVEL9K_EMPTY_LINE_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=''
 
 # plugins
 source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# aliases
-source $HOME/.zaliases
+# pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
