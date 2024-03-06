@@ -6,7 +6,7 @@ unsetopt autocd extendedglob
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/brycen/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 # git
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
@@ -17,16 +17,10 @@ autoload -Uz compinit && compinit -i
 
 setopt COMPLETE_ALIASES
 
-# nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# gcloud.
-if [ -f '/Users/brycen/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/brycen/google-cloud-sdk/completion.zsh.inc'; fi
-if [ -f '/Users/brycen/google-cloud-sdk/path.bash.inc' ]; then source '/Users/brycen/google-cloud-sdk/path.zsh.inc'; fi
-
-# kubectl
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+# export NVM_DIR="$HOME/.nvm"
+#   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+#   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # theme
 source $ZSH_CUSTOM/themes/powerlevel10k/powerlevel10k.zsh-theme
@@ -82,6 +76,7 @@ POWERLEVEL9K_NODE_VERSION_FOREGROUND='234'
 # plugins
 source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH_CUSTOM/plugins/zsh-nvm/zsh-nvm.plugin.zsh
 
 # aliases
 source $HOME/.zaliases
@@ -93,3 +88,14 @@ source $HOME/.zsecrets
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

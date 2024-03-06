@@ -7,20 +7,16 @@ alias h="history"
 alias top="vtop -t monokai"
 alias gs="git status"
 alias gb="git branch"
+alias gbs="git branch-select"
 alias gch="git checkout"
 alias gc="git commit"
-alias k="kubectl"
 alias t="terraform"
-# alias compose="docker-compose"
-alias c="docker-compose"
-complete -F __start_kubectl k
-alias apply="kubectl apply -Rf ./"
-alias kgp="kubectl get pods"
-alias kgd="kubectl get deployments"
-alias kgs="kubectl get services"
-alias kdp="kubectl delete pod"
-alias kdd="kubectl delete deployment"
-alias kds="kubectl delete service"
 alias weather="curl wttr.in"
-# bailey-nelson/switch - `source` is required in order to change directories in a shell script
-alias switch='source /Users/brycen/dev/github.com/bailey-nelson/switch/switch'
+alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n' | pbcopy"
+alias uuid0="printf '%s' '00000000-0000-0000-0000-000000000000' | pbcopy"
+alias timestamp="date +%Y-%m-%dT%H:%M:%S.000%z | tr -d '\n' | pbcopy"
+alias zshreload="source ~/.zshrc"
+# brymastr/switch - `source` is required in order to change directories in a shell script
+alias switch='source /Users/bdorsay/dev/github.com/brymastr/switch/switch'
+alias aws-login='aws sso login && aws-sso-cred-restore'
+alias k='kubectl'
